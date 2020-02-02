@@ -1,8 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { render } from 'react-dom';
 
-const Hi = () => {
-  return <p>Hi?</p>;
+const Hi = (props) => {
+  return <p>Hi, {props.name}?</p>;
 };
 
-render(<Hi />, document.getElementById('app'));
+Hi.propTypes = {
+  name: PropTypes.string
+};
+
+render(<Hi name="Jim Bob" />, document.getElementById('app'));
